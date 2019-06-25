@@ -15,7 +15,7 @@
 
 <script>
   export default {
-    name: "RangeSlider",
+    name: "range-slider",
     props: {
       min: {
         type: Number,

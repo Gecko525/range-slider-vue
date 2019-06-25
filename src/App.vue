@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <RangeSlider
+    <range-slider
       :min="0" :max="1000" :step="100"
       :start="range.start" :end="range.end"
       @slideEnd="slideEnd">
-    </RangeSlider>
+    </range-slider>
   </div>
 </template>
 
