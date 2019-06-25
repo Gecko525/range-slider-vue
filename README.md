@@ -15,16 +15,16 @@ npm
 ```npm install --save range-slider-vue```
 ## Usage
 
-Import range-slider-vue components and use it in your components.
-You can use the prop "option" to configure components.
+Import "RangeSlider" and use it in your components.
+
 ```
 <template>
   <div id="app">
-    <RangeSlider
+    <range-slider
       :min="0" :max="1000"  :step="100"
       :start="range.start" :end="range.end"
       @slideEnd="slideEnd">
-    </RangeSlider>
+    </range-slider>
   </div>
 </template>
 
@@ -47,7 +47,6 @@ export default {
     slideEnd(e) {
       this.range.start = e.start;
       this.range.end = e.end;
-      console.log(this.range);
     }
   }
 }
@@ -64,7 +63,7 @@ export default {
 </style>
 ```
 
-props:
+Available props:
 
 ```min``` - min value(require)  
 ```max``` - max value(require)  
@@ -76,4 +75,8 @@ props:
 ```ballColor``` -  ball color  
 ```roundColor``` - range bar color  
 ```trackColor``` - track bar color  
+
+Events:
+
+``slideEnd`` - triggered when sliding and changing, you can get range values through ``event.start`` and ``event.end``
 
