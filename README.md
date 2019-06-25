@@ -1,19 +1,19 @@
-### range-slider-vue
+## range-slider-vue
 
 Simple slider component of Vue.js
 
 version: 1.0.0
 
-### Requirements
+## Requirements
 
 Vue >= 2.0
 
-### Installation
+## Installation
 
 npm
 
 ```npm install --save range-slider-vue```
-### Usage
+## Usage
 
 Import range-slider-vue components and use it in your components.
 You can use the prop "option" to configure components.
@@ -29,7 +29,7 @@ You can use the prop "option" to configure components.
 </template>
 
 <script>
-import RangeSlider from './rangeSlider/rangeSlider'
+import RangeSlider from 'range-slider-vue';
 export default {
   name: 'app',
   components: {
@@ -64,7 +64,7 @@ export default {
 </style>
 ```
 
-option props:
+props:
 
 ```min``` - min value(require)  
 ```max``` - max value(require)  
