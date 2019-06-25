@@ -9,9 +9,9 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
     filename: 'rangeSlider.js',
-    /*library: 'rangeSlider',
+    library: 'rangeSlider',
     libraryTarget: 'umd',
-    umdNamedDefine: true*/
+    umdNamedDefine: true
   },
   module: {
     rules: [
@@ -75,9 +75,9 @@ module.exports = {
     ]
   },
   resolve: {
-    alias: {
+    /*alias: {
       'vue$': 'vue/dist/vue.esm.js'
-    },
+    },*/
     extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {

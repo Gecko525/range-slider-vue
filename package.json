@@ -3,10 +3,13 @@
   "description": "Simple slider component of Vue.js",
   "version": "1.0.0",
   "keywords": ["range", "slider", "vue", "component"],
-  "author": "wuls",
+  "author": "gecko525",
   "license": "MIT",
   "private": false,
   "main": "dist/rangeSlider.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
