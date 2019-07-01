@@ -1,8 +1,8 @@
 ## range-slider-vue
 
-Simple slider component of Vue.js
+Simple range slider component of Vue.js
 
-version: 1.0.2
+version: 1.0.3
 
 ## Requirements
 
