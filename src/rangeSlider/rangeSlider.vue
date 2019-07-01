@@ -1,14 +1,18 @@
 <template>
   <div class="round-bar"
-       :style="{height: ballWidth + 'px', padding: '0 '+ (ballWidth / 2 + 20) + 'px'}">
+       :style="{height: ballWidth + 40 + 'px', padding: '0 '+ (ballWidth / 2 + 20) + 'px'}">
     <div class="round-bar-track" ref="track"
-         :style="{margin: (ballWidth - barHeight) / 2 + 'px auto', height: barHeight + 'px', borderRadius: barHeight / 2 + 'px', background: trackColor}">
+         :style="{margin: (ballWidth - barHeight) / 2 + 20 + 'px auto', height: barHeight + 'px', borderRadius: barHeight / 2 + 'px', background: trackColor}">
       <div class="track-round"
            :style="{left: roundX + 'px', width: roundWidth + 'px', background: rangeColor}"></div>
       <div class="track-ball-left track-ball"
-           :style="{width: ballWidth + 'px', height: ballWidth + 'px', top: (barHeight - ballWidth) / 2 + 'px', left: leftBallX + 'px', background: ballColor}" @mousedown="dragLeftBall"></div>
+           @dragstart="preventDrag"
+           @mousedown="dragLeftBall"
+           :style="{width: ballWidth + 'px', height: ballWidth + 'px', top: (barHeight - ballWidth) / 2 + 'px', left: leftBallX + 'px', background: ballColor}"></div>
       <div class="track-ball-right track-ball"
-           :style="{width: ballWidth + 'px', height: ballWidth + 'px', top: (barHeight - ballWidth) / 2 + 'px', right: rightBallX + 'px', background: ballColor}" @mousedown="dragRightBall"></div>
+           @dragstart="preventDrag"
+           @mousedown="dragRightBall"
+           :style="{width: ballWidth + 'px', height: ballWidth + 'px', top: (barHeight - ballWidth) / 2 + 'px', right: rightBallX + 'px', background: ballColor}"></div>
     </div>
   </div>
 </template>
@@ -98,6 +102,9 @@
         } else {
           ele['on' + type] = null;
         }
+      },
+      preventDrag(e) {
+        e && e.preventDefault() ? e.preventDefault() : window.event.returnValue = false;
       },
       dragLeftBall(e_click) {
         const startX = e_click.clientX;
@@ -207,6 +214,7 @@
         position: absolute;
         cursor: pointer;
         box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.15);
+        -webkit-user-drag: unset;
       }
     }
   }
